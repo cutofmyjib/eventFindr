@@ -1,0 +1,38 @@
+@font-face {
+  font-family: Playlist;
+  src: url(Playlist Script.otf);
+}
+
+html, body {
+  min-height: 500px;
+  width: 500px;
+}
+
+.wrapper {
+  height: 100vh;
+  color: white;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+  font-family: Playlist, sans-serif;
+  font-size: 1.5em;
+  height: 50vh;
+  background: rgba(255,84,5,1);
+  background: -moz-linear-gradient(-45deg, rgba(255,84,5,1) 0%, rgba(255,148,18,1) 68%, rgba(255,170,0,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,84,5,1)), color-stop(68%, rgba(255,148,18,1)), color-stop(100%, rgba(255,170,0,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(255,84,5,1) 0%, rgba(255,148,18,1) 68%, rgba(255,170,0,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(255,84,5,1) 0%, rgba(255,148,18,1) 68%, rgba(255,170,0,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(255,84,5,1) 0%, rgba(255,148,18,1) 68%, rgba(255,170,0,1) 100%);
+  background: linear-gradient(135deg, rgba(255,84,5,1) 0%, rgba(255,148,18,1) 68%, rgba(255,170,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5405', endColorstr='#ffaa00', GradientType=1 );
+}
+
+.appname {
+  font-family: Playlist, sans-serif;
+  font-size: 3.75em;
+}
