@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {render} from 'react-dom';
 import reqwest from 'reqwest';
 import Event from './event.js';
-import {auth} from './creds.js';
+import {base, auth} from './creds.js';
 import {Link} from 'react-router';
 
 export default class Events extends Component {
@@ -11,30 +11,43 @@ export default class Events extends Component {
     this.state = {eventsQuery : []}
   }
 
-  componentDidMount() {
+  componentWillReceiveProps(nextProps) {
+    this.setState({status: 'loading'})
     reqwest({
-      url: 'https://www.eventbriteapi.com/v3/events/search/?location.longitude=-97.7500&location.latitude=30.2500&location.within=15mi&token='+auth,
+      url: base+'venue.city='+nextProps.queryCity+'&sort_by=date&start_date.keyword=this_week&token='+auth,
       //CORS not jsonp
       crossOrigin: true,
       type: 'json'
     })
     .then((function(response){
-      this.setState({eventsQuery: response.events});
+      this.setState({eventsQuery: response.events, status: 'success'});
     }).bind(this))
 
     .catch(function(response){
-      console.log('fail');
-      console.log(response)
+      this.setState({status: 'fail'})
     })
   }
 
   render() {
+    var message = '';
     var list = this.state.eventsQuery.map(function(data) {
       return <Event {...data} />
     })
+    if (this.state.status === 'success') {
+      if (list.length > 0) {
+        message = 'Popular events in ' + this.props.queryCity;
+      } else {
+        message = 'Sorry, there are no events this week.'
+      }
+    } else {
+      message = this.state.status;
+    }
     return (
-      <div className="ui stackable cards">
-        {list}
+      <div>
+        <h1 className="events-status">{message}</h1>
+        <div className="ui stackable cards">
+          {list}
+        </div>
       </div>
     );
   }
