@@ -11,7 +11,7 @@ export default class Home extends Component {
 
   setLoc(event) {
     if(event.keyCode == 13) {
-      this.setState({ queryString: event.target.value });
+      this.setState({ queryCity: event.target.value });
     }
   }
 
@@ -23,7 +23,7 @@ export default class Home extends Component {
           <p>Find events near you!</p>
           <Eventsearch onKeyDown={this.setLoc.bind(this)} />
         </section>
-        <Events />
+        <Events queryCity={this.state.queryCity}/>
       </div>
     );
   }
