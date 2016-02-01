@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
-import Events from './events.js'
 
 export default class Eventsearch extends Component {
   render() {

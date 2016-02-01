@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
-import {connect} from 'react-refetch';
 import Eventsearch from './eventsearch.js';
 import Events from './events.js';
 
