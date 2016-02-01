@@ -5,7 +5,7 @@ import {Link} from 'react-router';
 export default class Event extends Component {
   render() {
     return (
-      <a className="ui card" href={this.props.url}>
+      <a className="yellow card" href={this.props.url} target="_blank">
         <div className="ui middle aligned selection list">
           <div className="item">
           <img src={this.props.logo ? this.props.logo.url : 'style/defaultBG.png'} className="ui tiny image" />
