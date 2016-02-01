@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {render} from 'react-dom';
 import reqwest from 'reqwest';
 import Event from './event.js';
-import {auth} from './creds.js';
+import {base, auth} from './creds.js';
 import {Link} from 'react-router';
 
 export default class Events extends Component {
@@ -11,9 +11,9 @@ export default class Events extends Component {
     this.state = {eventsQuery : []}
   }
 
-  componentDidMount() {
+  componentWillReceiveProps(nextProps) {
     reqwest({
-      url: 'https://www.eventbriteapi.com/v3/events/search/?location.longitude=-97.7500&location.latitude=30.2500&location.within=15mi&token='+auth,
+      url: base+'venue.city='+nextProps.queryCity+'&token='+auth,
       //CORS not jsonp
       crossOrigin: true,
       type: 'json'
