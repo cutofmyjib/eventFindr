@@ -12,6 +12,7 @@
   },
 
   "permissions": [
+    "tabs",
     "activeTab",
     "https://ajax.googleapis.com/",
     "http://eventbrite.com/*"

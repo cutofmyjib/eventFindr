@@ -14,7 +14,7 @@ export default class Events extends Component {
   componentWillReceiveProps(nextProps) {
     this.setState({status: 'loading'})
     reqwest({
-      url: base+'venue.city='+nextProps.queryCity+'&token='+auth,
+      url: base+'venue.city='+nextProps.queryCity+'&sort_by=date&start_date.keyword=this_week&token='+auth,
       //CORS not jsonp
       crossOrigin: true,
       type: 'json'
@@ -34,7 +34,7 @@ export default class Events extends Component {
       return <Event {...data} />
     })
     if (this.state.status === 'success') {
-      message = 'Here are events in ' + this.props.queryCity;
+      message = 'Popular events in ' + this.props.queryCity;
     } else {
       message = this.state.status;
     }
