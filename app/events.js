@@ -34,13 +34,17 @@ export default class Events extends Component {
       return <Event {...data} />
     })
     if (this.state.status === 'success') {
-      message = 'Popular events in ' + this.props.queryCity;
+      if (list.length > 0) {
+        message = 'Popular events in ' + this.props.queryCity;
+      } else {
+        message = 'Sorry, there are no events this week.'
+      }
     } else {
       message = this.state.status;
     }
     return (
-      <div className="events-body">
-        <h3 className="ui header">{message}</h3>
+      <div>
+        <h1 className="events-status">{message}</h1>
         <div className="ui stackable cards">
           {list}
         </div>
