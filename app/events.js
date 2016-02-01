@@ -12,20 +12,23 @@ export default class Events extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({status: 'loading'})
-    reqwest({
-      url: base+'venue.city='+nextProps.queryCity+'&sort_by=date&start_date.keyword=this_week&token='+auth,
-      //CORS not jsonp
-      crossOrigin: true,
-      type: 'json'
-    })
-    .then((function(response){
-      this.setState({eventsQuery: response.events, status: 'success'});
-    }).bind(this))
 
-    .catch(function(response){
-      this.setState({status: 'fail'})
-    })
+    if (nextProps.queryCity && nextProps.week) {
+      this.setState({status: 'loading'})
+      reqwest({
+        url: base+'venue.city='+nextProps.queryCity+'&sort_by=date&start_date.keyword='+nextProps.week+'&token='+auth,
+        //CORS not jsonp
+        crossOrigin: true,
+        type: 'json'
+      })
+      .then((function(response){
+        this.setState({eventsQuery: response.events, status: 'success'});
+      }).bind(this))
+
+      .catch((function(response){
+        this.setState({status: 'fail'})
+      }).bind(this))
+    }
   }
 
   render() {
