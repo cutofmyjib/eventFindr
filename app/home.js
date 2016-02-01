@@ -7,13 +7,18 @@ import Events from './events.js';
 export default class Home extends Component {
   constructor(props) {
     super(props)
-    this.state = {selectedWeek: 'this_week'}
+    this.state = {week: 'this_week'}
   }
 
   setLoc(event) {
     if(event.keyCode == 13) {
       this.setState({queryCity: event.target.value});
     }
+  }
+
+  setWeek(event) {
+    console.log(event.target.value)
+    this.setState({week: event.target.value})
   }
 
   render() {
@@ -23,10 +28,10 @@ export default class Home extends Component {
           <h1 className="appname">eventFindr</h1>
           <p>Find events near you!</p>
           <Eventsearch onKeyDown={this.setLoc.bind(this)} />
-          <Radiobuttons />
+          <Radiobuttons onChange={this.setWeek.bind(this)} checked={this.state.week} />
         </section>
         <section className="events-body">
-          <Events queryCity={this.state.queryCity}/>
+          <Events queryCity={this.state.queryCity} week={this.state.week}/>
         </section>
       </div>
     );
