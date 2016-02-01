@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "Event Finder",
+  "name": "eventFindr",
   "description": "This extension shows a list of events using Eventbrite API",
   "version": "1.0",
 
