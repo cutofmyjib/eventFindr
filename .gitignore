@@ -3,3 +3,4 @@ dist/index_bundle.js
 dist/index_bundle.js.map
 dist/index.html
 npm-debug.log
+dist.pem
