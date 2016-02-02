@@ -1,6 +1,6 @@
 @font-face {
   font-family: Playlist;
-  src: url(Playlist Script.otf);
+  src: url('chrome-extension://__MSG_@@extension_id__/style/Playlist Script.otf');
 }
 
 html, body {
@@ -21,7 +21,7 @@ html, body {
   font-family: Playlist, sans-serif;
   font-size: 1.5em;
   color: white;
-  height: 200px;
+  height: 230px;
   background: rgba(255,84,5,1);
   background: -moz-linear-gradient(-45deg, rgba(255,84,5,1) 0%, rgba(255,148,18,1) 68%, rgba(255,170,0,1) 100%);
   background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,84,5,1)), color-stop(68%, rgba(255,148,18,1)), color-stop(100%, rgba(255,170,0,1)));
@@ -50,8 +50,20 @@ html, body {
 }
 
 .events-status {
-  line-height: 85px;
+  line-height: 50px;
   text-align: center;
-  font-family: Playlist, sans-serif;
-  color: #D78521;
+  font-family: 'Signika', sans-serif;
+  font-weight: 600;
+  color: #D33F49;
+}
+
+.radio-form {
+  margin-top: 12px;
+}
+.radio-form label {
+  padding: 0 24px 0 6px;
+  font-family: 'Signika', sans-serif;
+  font-weight: 400;
+  font-size: .75em;
+  color: #FFE6A7;
 }
