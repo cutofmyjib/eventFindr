@@ -11,4 +11,3 @@ eventFindr is a Chrome extension that displays a list of events based by the use
 5. Navigate to `http://localhost:8080/`
  
 ![](eventFindr.gif)
-
