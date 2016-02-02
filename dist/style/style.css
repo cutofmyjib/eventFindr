@@ -46,15 +46,14 @@ html, body {
 
 .events-body {
   height: 100%;
-  background: url("fun.png");
+  background: url('fun.png');
 }
 
 .events-status {
   line-height: 50px;
   text-align: center;
-  font-family: 'Signika', sans-serif;
-  font-weight: 600;
-  color: #D33F49;
+  font-family: 'Lato', sans-serif;
+  font-style: italic
 }
 
 .radio-form {
@@ -62,8 +61,7 @@ html, body {
 }
 .radio-form label {
   padding: 0 24px 0 6px;
-  font-family: 'Signika', sans-serif;
-  font-weight: 400;
+  font-family: 'Lato', sans-serif;
   font-size: .75em;
   color: #FFE6A7;
 }
