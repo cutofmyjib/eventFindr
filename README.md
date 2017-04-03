@@ -5,9 +5,9 @@ eventFindr is a Chrome extension that displays a list of events based by the use
 
 ## Run it locally
 1. Clone the repo `https://github.com/cutofmyjib/eventFindr.git`
-2. `cd main`
+2. `cd eventFindr`
 3. `npm install`
 4. `npm start`
 5. Navigate to `http://localhost:8080/`
- 
+
 ![](eventFindr.gif)
