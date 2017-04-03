@@ -18,7 +18,7 @@ export default class Events extends Component {
     this.setState({status: 'loading'})
 
     var data = {
-      'venue.city': nextProps.city,
+      'location.address': nextProps.city,
       'sort_by': 'date',
       'token': auth
     }
