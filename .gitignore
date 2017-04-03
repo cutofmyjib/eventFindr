@@ -4,3 +4,5 @@ dist/index_bundle.js.map
 dist/index.html
 npm-debug.log
 dist.pem
+
+/app/creds.js
